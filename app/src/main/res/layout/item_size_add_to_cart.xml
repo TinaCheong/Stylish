@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="variant"
+            type="student.tina.stylish.object.Variant" />
+        <variable
+            name="selected"
+            type="Boolean" />
+
+        <import type="android.view.View">
+
+        </import>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <View
+            android:id="@+id/size_block_middle_1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/cardview_dark_background"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/size_block_middle_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/toolbarColor"
+            app:layout_constraintBottom_toBottomOf="@id/size_block_middle_1"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@id/size_block_middle_1"
+            app:layout_constraintStart_toStartOf="@id/size_block_middle_1"
+            app:layout_constraintTop_toTopOf="@id/size_block_middle_1"
+            android:layout_margin="1dp"/>
+
+        <View
+            android:id="@+id/color_block_bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#f0f0f0"
+            app:layout_constraintBottom_toBottomOf="@id/size_block_middle_1"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@id/size_block_middle_1"
+            app:layout_constraintStart_toStartOf="@id/size_block_middle_1"
+            app:layout_constraintTop_toTopOf="@id/size_block_middle_1"
+            android:layout_margin="4dp"/>
+
+        <View
+            android:id="@+id/size_block"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="#f0f0f0"
+            android:visibility="@{selected ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/display_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{variant.size}"
+            android:textColor="#888888"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/size_block"
+            app:layout_constraintEnd_toEndOf="@+id/size_block"
+            app:layout_constraintStart_toStartOf="@+id/size_block"
+            app:layout_constraintTop_toTopOf="@+id/size_block" />
+
+        <TextView
+            android:id="@+id/display_size_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{variant.size}"
+            android:visibility="@{variant.stock == 0 ? View.INVISIBLE : View.VISIBLE}"
+            android:textColor="#3f3a3a"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/size_block"
+            app:layout_constraintEnd_toEndOf="@+id/size_block"
+            app:layout_constraintStart_toStartOf="@+id/size_block"
+            app:layout_constraintTop_toTopOf="@+id/size_block" />
+
+        <View
+            android:id="@+id/size_slash"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@mipmap/image_strikethrough"
+            android:visibility="@{variant.stock == 0 ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

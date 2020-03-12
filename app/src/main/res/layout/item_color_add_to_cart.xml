@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="color"
+            type="student.tina.stylish.object.Color" />
+
+        <variable
+            name="selected"
+            type="Boolean" />
+
+        <import type="android.view.View">
+
+        </import>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <View
+            android:id="@+id/color_block_middle_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_dark_background"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/color_block_middle_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/toolbarColor"
+            app:layout_constraintBottom_toBottomOf="@id/color_block_middle_1"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@id/color_block_middle_1"
+            app:layout_constraintStart_toStartOf="@id/color_block_middle_1"
+            app:layout_constraintTop_toTopOf="@id/color_block_middle_1"
+            android:layout_margin="1dp"/>
+
+        <View
+            android:id="@+id/color_block_bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:colorAddBorder="@{color}"
+            app:layout_constraintBottom_toBottomOf="@id/color_block_middle_1"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@id/color_block_middle_1"
+            app:layout_constraintStart_toStartOf="@id/color_block_middle_1"
+            app:layout_constraintTop_toTopOf="@id/color_block_middle_1"
+            android:layout_margin="4dp"/>
+
+        <View
+            android:id="@+id/color_block_top"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:colorAddBorder="@{color}"
+            android:visibility="@{selected ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/color_block_middle_1"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="@id/color_block_middle_1"
+            app:layout_constraintStart_toStartOf="@id/color_block_middle_1"
+            app:layout_constraintTop_toTopOf="@id/color_block_middle_1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

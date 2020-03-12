@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Stylish</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="facebook_app_id">2593492007399758</string>
+    <string name="fb_login_protocol_scheme">fb2593492007399758</string>
+    <string name="dollar">NT$%d</string>
+
+    <!-- Facebook login page -->
+    <string name="facebook_login">請先登入會員</string>
+    <string name="facebook_login_hint">登入會員後即可使用個人功能 \u25E6</string>
+    <string name="facebook_button_message">Facebook登入</string>
+
+    <!-- Facebook login success -->
+    <string name="facebook_login_success">登入成功</string>
+
+    <!-- fragment product -->
+    <string name="color_text">顔色</string>
+    <string name="size_text">尺寸</string>
+    <string name="stock_text">庫存</string>
+    <string name="texture_text">材質</string>
+    <string name="wash_text">洗滌</string>
+    <string name="place_text">產地</string>
+    <string name="note_text">備註</string>
+    <string name="add_cart_text">加入購物車</string>
+
+    <!-- fragment profile -->
+    <string name="user_name">通靈小安</string>
+    <string name="user_expense">累計消費 NT$91800</string>
+    <string name="my_order">我的訂單</string>
+    <string name="all_function">查看全部</string>
+    <string name="purse_text">待付款</string>
+    <string name="car_text">待簽收</string>
+    <string name="comment_text">待評價</string>
+    <string name="product_text">退換貨</string>
+    <string name="box_text">待出貨</string>
+    <string name="more_text">更多服務</string>
+    <string name="ring_text">貨到通知</string>
+    <string name="money_text">帳戶退款</string>
+    <string name="address_text">地址</string>
+    <string name="star_text">收藏</string>
+    <string name="headphone_text">客服訊息</string>
+    <string name="feedback_text">系統回饋</string>
+    <string name="cellphone_text">手機綁定</string>
+    <string name="setting_text">設定</string>
+
+    <!-- fragment profile -->
+    <string name="toolbar_catalog">型錄</string>
+    <string name="toolbar_cart">購物車</string>
+    <string name="toolbar_profile">個人</string>
+    <string name="total_cost">結帳</string>
+
+    <!-- Product Details -->
+    <string name="choose_color_text">選擇顏色</string>
+    <string name="choose_size_text">選擇尺寸</string>
+    <string name="choose_amount_text">選擇數量</string>
+    <string name="stock_amount">庫存︰%d</string>
+    <string name="not_enough_text">庫存不足</string>
+
+    <!-- Dialog Success Add To Cart -->
+    <string name="add_success_text">加入成功</string>
+
+    <!-- linear view cart items -->
+    <string name="remove_text">移除</string>
+
+    <!-- Cart Fragment -->
+    <string name="go_to_payment">前往結帳</string>
+
+    <!-- PurchaseFragment Header -->
+    <string name="header_text">結帳商品</string>
+
+    <!-- PurchaseFragment cloths -->
+    <string name="multiply_icon">x</string>
+
+    <!-- PurchaseFragment information -->
+    <string name="purchase_information">收件資訊</string>
+    <string name="buyer_name_text">收件人姓名</string>
+    <string name="buyer_email">Email</string>
+    <string name="buyer_phone_number">手機號碼</string>
+    <string name="buyer_address_text">地址</string>
+    <string name="phone_number">EX︰0912345678</string>
+    <string name="delivery_text">配送時間</string>
+    <string name="delivery_morning">8:00-12:00</string>
+    <string name="delivery_afternoon">14:00-18:00</string>
+    <string name="delivery_all_day">不指定</string>
+
+    <!-- PurchaseFragment payment -->
+    <string name="payment_information_text">付款詳情</string>
+    <string name="pay_method">選擇付款方式</string>
+    <string-array name="spinner_items">
+        <item>信用卡付款</item>
+        <item>貨到付款</item>
+    </string-array>
+
+    <string name="all_purchase_text">商品總金額</string>
+    <string name="total_delivery_text">運費總金額</string>
+    <string name="confirm_payment_text">確定結帳</string>
+    <string name="total_amount">總計（%d樣商品）</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TPDirect</string>
+    <string name="gateway_processor_name">tappay</string>
+    <string name="google_service_error"> "Google Play Services error" app, and you’ll be all set to pay.</string>
+    <string name="want_to_use_android_pay">Set Android Pay up using the Android Pay app, and you’ll be all set to pay.</string>
+    <style name="TPDCardNumberEditText">
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">22</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

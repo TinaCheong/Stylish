@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toolbarColor">#ffffff</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">@android:color/black</color>
+    <color name="colorBlack">#3f3a3a</color>
+    <color name="colorGreyWithOpacity">#663f3a3a</color>
+    <color name="errorRed">#d0021b</color>
+    <color name="lightGrey">#646464</color>
+</resources>

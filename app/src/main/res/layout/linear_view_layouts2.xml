@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="product"
+            type="student.tina.stylish.object.Product" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/layout2_image"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/layout2_image_bottom"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:imageUrl="@{product.images[0]}" />
+
+        <ImageView
+            android:id="@+id/layout2_image_top"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/layout2_image_right"
+            app:layout_constraintStart_toEndOf="@+id/layout2_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:imageUrl="@{product.images[1]}" />
+
+        <ImageView
+            android:id="@+id/layout2_image_bottom"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toEndOf="@+id/layout2_image"
+            app:layout_constraintTop_toBottomOf="@+id/layout2_image_top"
+            app:imageUrl="@{product.images[2]}" />
+
+        <ImageView
+            android:id="@+id/layout2_image_right"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/layout2_image_bottom"
+            app:layout_constraintTop_toTopOf="parent"
+            app:imageUrl="@{product.images[3]}" />
+
+        <TextView
+            android:id="@+id/image_detail3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{product.title}"
+            android:textAlignment="viewStart"
+            android:textColor="#3f3a3a"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout2_image" />
+
+        <TextView
+            android:id="@+id/image_detail4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{product.description}"
+            android:textAlignment="viewStart"
+            android:textColor="#646464"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_detail3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

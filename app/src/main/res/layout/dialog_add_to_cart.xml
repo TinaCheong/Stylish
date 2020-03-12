@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="student.tina.stylish.view.AddToCartViewModel" />
+
+        <import type="android.view.View">
+
+        </import>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_round_corner">
+
+
+        <TextView
+            android:id="@+id/cloth_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{viewModel.selectedProduct.title}"
+            android:textColor="#3f3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cloth_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            app:displayPrice="@{viewModel.selectedProduct.price}"
+            android:textColor="#3f3a3a"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cloth_name" />
+
+        <View
+            android:id="@+id/line9"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="#cccccc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cloth_price" />
+
+        <TextView
+            android:id="@+id/color_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@string/choose_color_text"
+            android:textColor="#646464"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line9" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detail_color_linear"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/color_select"
+            app:listDataColorSelect="@{viewModel.selectedProduct.colors}"/>
+
+
+        <TextView
+            android:id="@+id/size_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@string/choose_size_text"
+            android:textColor="#646464"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_color_linear" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detail_size_linear"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:listDataSizeSelect="@{viewModel.selectedSize}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/size_select" />
+
+
+        <TextView
+            android:id="@+id/number_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@string/choose_amount_text"
+            android:textColor="@{viewModel.size != null &amp; viewModel.inputAmount > viewModel.stockAmount ? @color/errorRed : @color/lightGrey}"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_size_linear" />
+
+        <TextView
+            android:id="@+id/stock_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:textColor="@{viewModel.size != null &amp; viewModel.inputAmount > viewModel.stockAmount ? @color/errorRed : @color/lightGrey}"
+            android:textSize="14sp"
+            app:displayStock="@{viewModel.stockAmount}"
+            app:layout_constraintBottom_toBottomOf="@+id/number_select"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/number_select" />
+
+        <TextView
+            android:id="@+id/not_enough_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="庫存不足"
+            android:textColor="#d0021b"
+            android:visibility="@{viewModel.size != null &amp; viewModel.inputAmount > viewModel.stockAmount ? View.VISIBLE : View.INVISIBLE}"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_amount" />
+
+        <EditText
+            android:id="@+id/edit_amount"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@{viewModel.size != null ? @drawable/add_subtract_shape_black : @drawable/add_subtract_shape}"
+            android:ems="10"
+            android:inputType="number"
+            android:text="@={viewModel.convertIntToString(viewModel.inputAmount)}"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/add_Button"
+            app:layout_constraintStart_toEndOf="@+id/subtract_Button"
+            app:layout_constraintTop_toTopOf="@+id/subtract_Button" />
+
+        <ImageButton
+            android:id="@+id/subtract_Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@{(viewModel.size != null &amp; viewModel.inputAmount >= viewModel.stockAmount) ? @drawable/add_subtract_shape_black : @drawable/add_subtract_shape}"
+            android:scaleType="centerInside"
+            android:tint="@{(viewModel.size != null &amp; viewModel.inputAmount >= viewModel.stockAmount) ? @color/colorBlack : @color/colorGreyWithOpacity}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/number_select"
+            app:srcCompat="@mipmap/icons_24px_subtract01" />
+
+        <ImageButton
+            android:id="@+id/add_Button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@{(viewModel.size != null &amp; viewModel.stockAmount > viewModel.inputAmount) ? @drawable/add_subtract_shape_black : @drawable/add_subtract_shape}"
+            android:scaleType="centerInside"
+            android:tint="@{(viewModel.size != null &amp; viewModel.stockAmount > viewModel.inputAmount) ? @color/colorBlack : @color/colorGreyWithOpacity}"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_amount"
+            app:srcCompat="@mipmap/icons_24px_add01" />
+
+        <Button
+            android:id="@+id/add_cart2"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@{(viewModel.size == null || viewModel.inputAmount > viewModel.stockAmount) ? @color/colorGreyWithOpacity : @color/colorBlack}"
+            android:stateListAnimator="@null"
+            android:text="@string/add_cart_text"
+            android:textColor="@color/toolbarColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line8"
+            app:layout_constraintVertical_bias="0.0">
+
+        </Button>
+
+        <View
+            android:id="@+id/line8"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="8dp"
+            android:background="#888888"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/not_enough_text" />
+
+        <ImageView
+            android:id="@+id/detail_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/icons_24px_close" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

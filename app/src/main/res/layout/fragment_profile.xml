@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+            <variable
+                name="profileFragment"
+                type="student.tina.stylish.fragment.ProfileFragment" />
+            <variable
+                name="user"
+                type="student.tina.stylish.object.UserSignIn" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.ProfileFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3f3a3a">
+
+                <ImageView
+                    android:id="@+id/profile_pic"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/bottom_profile_selector"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:letterSpacing="0.15"
+                    android:text="@string/user_name"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/profile_pic"
+                    app:layout_constraintTop_toTopOf="@+id/profile_pic" />
+
+                <TextView
+                    android:id="@+id/user_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:letterSpacing="0.15"
+                    android:text="@string/user_expense"
+                    android:textColor="#999999"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/profile_pic"
+                    app:layout_constraintStart_toEndOf="@+id/profile_pic"
+                    app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/my_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:letterSpacing="0.15"
+                    android:text="@string/my_order"
+                    android:textColor="#3f3a3a"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/all_function"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/all_function"
+                    android:textColor="#646464"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/my_order"
+                    app:layout_constraintEnd_toStartOf="@+id/arrow"
+                    app:layout_constraintTop_toTopOf="@+id/my_order"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="10dp"
+                    android:layout_height="18dp"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/all_function"
+                    app:layout_constraintDimensionRatio="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/all_function"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/purse_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/purse_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/purse_icon"
+                    app:layout_constraintHorizontal_bias="0.466"
+                    app:layout_constraintStart_toStartOf="@+id/purse_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/purse_icon" />
+
+                <TextView
+                    android:id="@+id/car_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/car_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/car_icon"
+                    app:layout_constraintHorizontal_bias="0.466"
+                    app:layout_constraintStart_toStartOf="@+id/car_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/car_icon" />
+
+                <TextView
+                    android:id="@+id/comment_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/comment_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/comment_icon"
+                    app:layout_constraintHorizontal_bias="0.466"
+                    app:layout_constraintStart_toStartOf="@+id/comment_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/comment_icon" />
+
+                <ImageView
+                    android:id="@+id/product_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="54dp"
+                    android:layout_marginEnd="34dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_exchange"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/comment_icon"
+                    app:layout_constraintTop_toTopOf="@+id/purse_icon" />
+
+                <ImageView
+                    android:id="@+id/box_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="54dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_awaitingshipment"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/car_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/purse_icon"
+                    app:layout_constraintTop_toTopOf="@+id/purse_icon" />
+
+                <ImageView
+                    android:id="@+id/car_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="54dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_shipped"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/comment_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/box_icon"
+                    app:layout_constraintTop_toTopOf="@+id/purse_icon" />
+
+                <ImageView
+                    android:id="@+id/comment_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="54dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_awaitingreview"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/product_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/car_icon"
+                    app:layout_constraintTop_toTopOf="@+id/purse_icon" />
+
+                <ImageView
+                    android:id="@+id/purse_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_awaitingpayment"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/box_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_order"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside" />
+
+                <TextView
+                    android:id="@+id/product_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/product_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/product_icon"
+                    app:layout_constraintHorizontal_bias="0.333"
+                    app:layout_constraintStart_toStartOf="@+id/product_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/product_icon" />
+
+                <TextView
+                    android:id="@+id/box_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/box_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/box_icon"
+                    app:layout_constraintHorizontal_bias="0.466"
+                    app:layout_constraintStart_toStartOf="@+id/box_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/box_icon" />
+
+                <TextView
+                    android:id="@+id/more_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/noto_sans"
+                    android:letterSpacing="0.15"
+                    android:text="@string/more_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/purse_text" />
+
+                <ImageView
+                    android:id="@+id/ring_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_notification"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/money_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/star_icon"
+                    app:layout_constraintTop_toTopOf="@+id/star_icon" />
+
+                <ImageView
+                    android:id="@+id/money_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_refunded"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/place_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/ring_icon"
+                    app:layout_constraintTop_toTopOf="@+id/star_icon" />
+
+                <ImageView
+                    android:id="@+id/place_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="34dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_address"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/money_icon"
+                    app:layout_constraintTop_toTopOf="@+id/star_icon" />
+
+                <TextView
+                    android:id="@+id/ring_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/ring_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ring_icon"
+                    app:layout_constraintStart_toStartOf="@+id/ring_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/ring_icon" />
+
+                <TextView
+                    android:id="@+id/money_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/money_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/money_icon"
+                    app:layout_constraintStart_toStartOf="@+id/money_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/money_icon" />
+
+                <TextView
+                    android:id="@+id/place_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/address_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/place_icon"
+                    app:layout_constraintStart_toStartOf="@+id/place_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/place_icon" />
+
+                <ImageView
+                    android:id="@+id/headphone_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="28dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_customerservice"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/feedback_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/star_text" />
+
+                <TextView
+                    android:id="@+id/star_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/star_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@+id/headphone_icon"
+                    app:layout_constraintEnd_toEndOf="@+id/star_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/star_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/star_icon" />
+
+                <ImageView
+                    android:id="@+id/star_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_starred"
+                    app:layout_constraintEnd_toStartOf="@+id/ring_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/more_text" />
+
+                <TextView
+                    android:id="@+id/headphone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/headphone_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/headphone_icon"
+                    app:layout_constraintStart_toStartOf="@+id/headphone_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/headphone_icon" />
+
+                <ImageView
+                    android:id="@+id/feedback_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_systemfeedback"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/cellphone_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/headphone_icon"
+                    app:layout_constraintTop_toTopOf="@+id/headphone_icon" />
+
+                <TextView
+                    android:id="@+id/feedback_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/feedback_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/feedback_icon"
+                    app:layout_constraintStart_toStartOf="@+id/feedback_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/feedback_icon" />
+
+                <ImageView
+                    android:id="@+id/cellphone_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_registercellphone"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toStartOf="@+id/setting_icon"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/feedback_icon"
+                    app:layout_constraintTop_toTopOf="@+id/headphone_icon" />
+
+                <TextView
+                    android:id="@+id/cellphone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/cellphone_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/cellphone_icon"
+                    app:layout_constraintStart_toStartOf="@+id/cellphone_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/cellphone_icon" />
+
+                <ImageView
+                    android:id="@+id/setting_icon"
+                    android:layout_width="0dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="34dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:src="@mipmap/icons_24px_settings"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@+id/cellphone_icon"
+                    app:layout_constraintTop_toTopOf="@+id/headphone_icon" />
+
+                <TextView
+                    android:id="@+id/setting_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:letterSpacing="0.15"
+                    android:onClick="@{profileFragment::onButtonClick}"
+                    android:text="@string/setting_text"
+                    android:textColor="#3f3a3a"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@+id/setting_icon"
+                    app:layout_constraintStart_toStartOf="@+id/setting_icon"
+                    app:layout_constraintTop_toBottomOf="@+id/setting_icon" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

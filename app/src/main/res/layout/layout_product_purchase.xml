@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="cartItems"
+            type="student.tina.stylish.database.CartItems" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/purchase_main_image"
+            android:layout_width="82dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{cartItems.mainImage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="82:110"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/purchase_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{cartItems.title}"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/purchase_main_image"
+            app:layout_constraintTop_toTopOf="@+id/purchase_main_image" />
+
+        <View
+            android:id="@+id/purchase_color"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:colorAddBorders="@{cartItems.color}"
+            app:layout_constraintStart_toEndOf="@+id/purchase_main_image"
+            app:layout_constraintTop_toBottomOf="@+id/purchase_title" />
+
+        <View
+            android:id="@+id/purchase_line"
+            android:layout_width="1dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="16dp"
+            android:background="#cccccc"
+            app:layout_constraintBottom_toBottomOf="@+id/purchase_color"
+            app:layout_constraintStart_toEndOf="@+id/purchase_color"
+            app:layout_constraintTop_toTopOf="@+id/purchase_color" />
+
+        <TextView
+            android:id="@+id/purchase_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            android:text="@{cartItems.size}"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/purchase_line"
+            app:layout_constraintStart_toEndOf="@+id/purchase_line"
+            app:layout_constraintTop_toTopOf="@+id/purchase_line" />
+
+        <TextView
+            android:id="@+id/purchase_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:letterSpacing="0.15"
+            app:displayPrice="@{cartItems.price}"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/purchase_size" />
+
+        <TextView
+            android:id="@+id/multiply_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/multiply_icon"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/purchase_main_image"
+            app:layout_constraintStart_toEndOf="@+id/purchase_main_image"
+            app:layout_constraintTop_toBottomOf="@+id/purchase_color" />
+
+        <TextView
+            android:id="@+id/purchase_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@{String.valueOf(cartItems.amount)}"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/multiply_icon"
+            app:layout_constraintStart_toEndOf="@+id/multiply_icon"
+            app:layout_constraintTop_toTopOf="@+id/multiply_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

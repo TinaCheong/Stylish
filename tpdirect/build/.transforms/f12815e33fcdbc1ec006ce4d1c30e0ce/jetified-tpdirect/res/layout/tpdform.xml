@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+
+    <tech.cherri.tpdirect.api.TPDNumberEditText
+        android:id="@+id/tpdCardEditText1"
+        style="@style/TPDCardNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:drawableLeft="@drawable/card_type_unknown"
+        android:drawablePadding="5dp"
+        android:gravity="start"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <tech.cherri.tpdirect.api.TPDNumberEditText
+            android:id="@+id/tpdMonthEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:ems="2"
+            android:focusable="true"
+            android:gravity="center"
+            android:hint="MM"
+            android:inputType="number"
+            android:maxLength="2"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text=" / "
+            android:textSize="18sp"/>
+
+        <tech.cherri.tpdirect.api.TPDNumberEditText
+            android:id="@+id/tpdYearEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:gravity="center"
+            android:hint="YY"
+            android:inputType="number"
+            android:maxLength="2"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <tech.cherri.tpdirect.api.TPDNumberEditText
+            android:id="@+id/tpdCCVEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:hint="CCV"
+            android:inputType="number"
+            android:maxLength="4"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
